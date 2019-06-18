@@ -1,13 +1,16 @@
 # RECO
 
+![ic_launcher_logo_round](https://user-images.githubusercontent.com/40545002/59718583-16366c00-9238-11e9-973c-ceb74e7e0e34.png)
+
 RECO -> REad COntent is simple Android App to read simple content using swipeable cards.
 
   - Implemnted MVVM Architecture and Live Data
   - Used Custom Convertor to clean api response using Retrofit
   - Used CardView and ViewPAger
   
-![Screenshot_1560888686](https://user-images.githubusercontent.com/40545002/59717381-7e378300-9235-11e9-9d2b-e047a4fa6c63.png) 
-![Screenshot_1560888694](https://user-images.githubusercontent.com/40545002/59717393-85f72780-9235-11e9-95b1-b56dc3c46482.png)
+![Screenshot_1560888686](https://user-images.githubusercontent.com/40545002/59718478-eab38180-9237-11e9-8793-5dc0513a8db2.png)
+![Screenshot_1560888694](https://user-images.githubusercontent.com/40545002/59718491-ef783580-9237-11e9-9b11-fab6fac9f9ef.png)
+![Screenshot_1560888718](https://user-images.githubusercontent.com/40545002/59718503-f606ad00-9237-11e9-915a-0b0b2aab6476.png)
 
 # Installation
 
