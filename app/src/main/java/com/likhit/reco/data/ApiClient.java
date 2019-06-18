@@ -4,6 +4,9 @@ import com.likhit.reco.data.convertor.PreprocessGsonConvertor;
 
 import retrofit2.Retrofit;
 
+/**
+ * ApiClient -> Initialising RetrofitInstance and passing custom converter.
+ */
 public class ApiClient {
 
     private static Retrofit retrofit;

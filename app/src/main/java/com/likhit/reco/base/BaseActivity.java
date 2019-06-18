@@ -1,5 +1,10 @@
 package com.likhit.reco.base;
 
+/**
+ * Base Activity->Parent Activity for all the activities.
+ *All required methods are handles by BaseActivity.
+ */
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,6 +13,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.likhit.reco.R;
 import com.likhit.reco.utils.Utils;
@@ -58,13 +64,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             actionBar.setTitle(title);
             actionBar.setDisplayHomeAsUpEnabled(homeButtonEnable);
             actionBar.setDisplayShowHomeEnabled(homeButtonEnable);
-
-//            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    onBackPressed();
-//                }
-//            });
         }
     }
 
@@ -80,12 +79,12 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     @Override
     public void showMessage(String message) {
-
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showMessage(int messageResId) {
-
+        Toast.makeText(this, getString(messageResId), Toast.LENGTH_SHORT).show();
     }
 }
 

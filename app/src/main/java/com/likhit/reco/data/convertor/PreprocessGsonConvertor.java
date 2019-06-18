@@ -19,6 +19,9 @@ import okio.Buffer;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
 
+/**
+ * PreprocessGsonConverter -> Converter preprocess api response.
+ */
 public class PreprocessGsonConvertor extends Converter.Factory {
 
     private final Gson gson;
@@ -73,6 +76,12 @@ public class PreprocessGsonConvertor extends Converter.Factory {
         }
     }
 
+    /**
+     * Customising Converter to clean rapi response.
+     * Here removing '/' from the response.
+     *
+     * @param <T>
+     */
     final class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
         private final Gson gson;
         private final TypeAdapter<T> adapter;

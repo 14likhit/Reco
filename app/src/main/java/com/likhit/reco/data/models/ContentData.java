@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+/**
+ * ContentData->Model Class for Content Data
+ */
 public class ContentData implements Serializable {
 
     @SerializedName("id")

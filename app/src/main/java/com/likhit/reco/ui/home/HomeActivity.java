@@ -16,6 +16,12 @@ import com.likhit.reco.databinding.ActivityHomeBinding;
 
 import java.util.List;
 
+/**
+ * Home Activity -> Parent Activity for the project
+ * Initiates bindings,Views and View Models
+ * Calls method to fetch data onCreate and onRefresh
+ * updates UI according to data receive.
+ */
 public class HomeActivity extends BaseActivity implements ViewPager.OnPageChangeListener, SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG = "HomeActivity";
@@ -48,6 +54,10 @@ public class HomeActivity extends BaseActivity implements ViewPager.OnPageChange
         getContent();
     }
 
+    /**
+     * calls getContentDataList from view model and observes the live data.
+     * ui gets updates on the basis of data received
+     */
     private void getContent() {
         binding.swipeRefresh.setRefreshing(true);
         contentDataViewModel.getContentDataList().observe(this, new Observer<List<ContentData>>() {
@@ -64,6 +74,10 @@ public class HomeActivity extends BaseActivity implements ViewPager.OnPageChange
         });
     }
 
+
+    /**
+     * Initialises the view
+     */
     private void initView() {
         binding.swipeRefresh.setOnRefreshListener(this);
         contentDataAdapter = new ContentDataAdapter(getSupportFragmentManager());
@@ -78,6 +92,9 @@ public class HomeActivity extends BaseActivity implements ViewPager.OnPageChange
         });
     }
 
+    /**
+     * Updates View once Data List Received.
+     */
     private void updateView() {
         contentDataAdapter.setContentDataList(contentDataList);
         contentDataAdapter.notifyDataSetChanged();

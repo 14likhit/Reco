@@ -15,6 +15,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * ContentDataRepository -> Repository class to fetch data from server.
+ * Initiates Retrofit service, enw=ques the request to getdata
+ * Stores and returns the mutableLiveData
+ */
 public class ContentDataRepository {
 
     private MutableLiveData<List<ContentData>> contentDataList = new MutableLiveData<>();
@@ -25,6 +30,10 @@ public class ContentDataRepository {
         this.service = ApiClient.getRetrofitInstance().create(ApiService.class);
     }
 
+    /**
+     * Method to get content data from server.
+     * @return MutableLiveData ContentDataList
+     */
     public MutableLiveData<List<ContentData>> getContentDataList() {
         final Call<BaseResponse> request = service.getContentData();
         request.enqueue(new Callback<BaseResponse>() {

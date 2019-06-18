@@ -8,6 +8,9 @@ import com.likhit.reco.data.models.ContentData;
 
 import java.util.List;
 
+/**
+ * ContentDataAdapter -> Adapter for the View Pager
+ */
 public class ContentDataAdapter extends FragmentStatePagerAdapter {
 
     private List<ContentData> contentDataList;
@@ -32,6 +35,10 @@ public class ContentDataAdapter extends FragmentStatePagerAdapter {
         return 0;
     }
 
+    /**
+     * Setter to set received contentDataList
+     * @param contentDataList
+     */
     public void setContentDataList(List<ContentData> contentDataList) {
         this.contentDataList = contentDataList;
     }

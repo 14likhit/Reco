@@ -1,6 +1,5 @@
 package com.likhit.reco.ui.home;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +8,10 @@ import android.view.ViewGroup;
 
 import com.likhit.reco.data.models.ContentData;
 import com.likhit.reco.databinding.FragmentContentDataBinding;
+
+/**
+ * ContentDatFragment-> Fragment for the ViewPager.
+ */
 
 public class ContentDataFragment extends Fragment {
 
@@ -24,6 +27,11 @@ public class ContentDataFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Creates instance of itself with input param of ContentData to be shown.
+     * @param contentData -> Data to be shown
+     * @return fragment instance of itself.
+     */
     public static ContentDataFragment newInstance(ContentData contentData) {
         ContentDataFragment fragment = new ContentDataFragment();
         Bundle args = new Bundle();

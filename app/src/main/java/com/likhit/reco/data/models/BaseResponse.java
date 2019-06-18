@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/**
+ * BaseResponse -> Model Base Response
+ */
 public class BaseResponse {
 
     @SerializedName("data")
