@@ -14,7 +14,6 @@ public class ContentDataFragment extends Fragment {
 
     private static final String TAG = "ContentDataFragment";
 
-    private static final String PAGE_NUMBER = "page_number";
     private static final String CONTENT_DATA = "content_data";
 
     private FragmentContentDataBinding binding;
@@ -43,6 +42,7 @@ public class ContentDataFragment extends Fragment {
             this.contentData = (ContentData) getArguments().getSerializable(CONTENT_DATA);
         }
         binding.tvContentData.setText(this.contentData.getText());
+        binding.tvPageNumber.setText(this.contentData.getId());
         return binding.getRoot();
     }
 

@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.likhit.reco.R;
-import com.mindorks.placeholderview.Utils;
+import com.likhit.reco.utils.Utils;
 
 @SuppressLint("Registered")
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {

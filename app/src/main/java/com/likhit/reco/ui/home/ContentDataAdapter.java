@@ -12,18 +12,27 @@ public class ContentDataAdapter extends FragmentStatePagerAdapter {
 
     private List<ContentData> contentDataList;
 
-    public ContentDataAdapter(FragmentManager fm, List<ContentData> contentDatas) {
+    public ContentDataAdapter(FragmentManager fm) {
         super(fm);
-        this.contentDataList = contentDatas;
     }
 
     @Override
     public Fragment getItem(int i) {
-        return ContentDataFragment.newInstance( contentDataList.get(i));
+        if (contentDataList != null) {
+            return ContentDataFragment.newInstance(contentDataList.get(i));
+        }
+        return null;
     }
 
     @Override
     public int getCount() {
-        return contentDataList.size();
+        if (contentDataList != null) {
+            return contentDataList.size();
+        }
+        return 0;
+    }
+
+    public void setContentDataList(List<ContentData> contentDataList) {
+        this.contentDataList = contentDataList;
     }
 }
