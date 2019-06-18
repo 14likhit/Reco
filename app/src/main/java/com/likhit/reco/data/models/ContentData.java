@@ -2,7 +2,9 @@ package com.likhit.reco.data.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ContentData {
+import java.io.Serializable;
+
+public class ContentData implements Serializable {
 
     @SerializedName("id")
     private String id;

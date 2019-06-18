@@ -2,6 +2,7 @@ package com.likhit.reco.ui.home;
 
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
+import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -13,17 +14,15 @@ import com.likhit.reco.data.models.BaseResponse;
 import com.likhit.reco.data.models.ContentData;
 import com.likhit.reco.databinding.ActivityHomeBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     private ActivityHomeBinding binding;
-
     private List<ContentData> contentDataList;
 
     @Override
@@ -31,11 +30,15 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
 
-        if (contentDataList == null) {
-            contentDataList = new ArrayList<>();
-        }
-        getContent();
+        setupToolbar("Home", false);
 
+        getContent();
+    }
+
+    @Override
+    protected void onDestroy() {
+        binding.vpPager.removeOnPageChangeListener(this);
+        super.onDestroy();
     }
 
     private void getContent() {
@@ -57,11 +60,29 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void initView() {
-        binding.swipePlaceHolderContentData.getBuilder()
-                .setDisplayViewCount(3);
-        for (ContentData contentData : contentDataList) {
-            binding.swipePlaceHolderContentData.addView(new ContentDataCard(contentData, this, binding.swipePlaceHolderContentData));
-        }
+        ContentDataAdapter contentDataAdapter = new ContentDataAdapter(getSupportFragmentManager(), contentDataList);
+        binding.vpPager.setAdapter(contentDataAdapter);
+        binding.vpPager.addOnPageChangeListener(this);
+        binding.tabLayout.setupWithViewPager(binding.vpPager, true);
+
     }
 
+    private int getItem() {
+        return binding.vpPager.getCurrentItem();
+    }
+
+    @Override
+    public void onPageScrolled(int i, float v, int i1) {
+
+    }
+
+    @Override
+    public void onPageSelected(int i) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+
+    }
 }
