@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Reco</string>
+    <string name="default_content_view">ImageView</string>
 </resources>
